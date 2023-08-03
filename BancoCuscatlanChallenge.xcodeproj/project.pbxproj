@@ -11,6 +11,11 @@
 		93AE798F2A7C2A58003B8800 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AE798E2A7C2A58003B8800 /* ContentView.swift */; };
 		93AE79912A7C2A5A003B8800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AE79902A7C2A5A003B8800 /* Assets.xcassets */; };
 		93AE79942A7C2A5A003B8800 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AE79932A7C2A5A003B8800 /* Preview Assets.xcassets */; };
+		93AE79B52A7C4E41003B8800 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 93AE79B42A7C4E41003B8800 /* Alamofire */; };
+		93AE79B82A7C4E73003B8800 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 93AE79B72A7C4E73003B8800 /* Nuke */; };
+		93AE79BA2A7C4E73003B8800 /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 93AE79B92A7C4E73003B8800 /* NukeExtensions */; };
+		93AE79BC2A7C4E73003B8800 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 93AE79BB2A7C4E73003B8800 /* NukeUI */; };
+		93AE79BE2A7C4E73003B8800 /* NukeVideo in Frameworks */ = {isa = PBXBuildFile; productRef = 93AE79BD2A7C4E73003B8800 /* NukeVideo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93AE79B52A7C4E41003B8800 /* Alamofire in Frameworks */,
+				93AE79B82A7C4E73003B8800 /* Nuke in Frameworks */,
+				93AE79BE2A7C4E73003B8800 /* NukeVideo in Frameworks */,
+				93AE79BA2A7C4E73003B8800 /* NukeExtensions in Frameworks */,
+				93AE79BC2A7C4E73003B8800 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +93,13 @@
 			dependencies = (
 			);
 			name = BancoCuscatlanChallenge;
+			packageProductDependencies = (
+				93AE79B42A7C4E41003B8800 /* Alamofire */,
+				93AE79B72A7C4E73003B8800 /* Nuke */,
+				93AE79B92A7C4E73003B8800 /* NukeExtensions */,
+				93AE79BB2A7C4E73003B8800 /* NukeUI */,
+				93AE79BD2A7C4E73003B8800 /* NukeVideo */,
+			);
 			productName = BancoCuscatlanChallenge;
 			productReference = 93AE79892A7C2A58003B8800 /* BancoCuscatlanChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +128,10 @@
 				Base,
 			);
 			mainGroup = 93AE79802A7C2A58003B8800;
+			packageReferences = (
+				93AE79B32A7C4E41003B8800 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				93AE79B62A7C4E73003B8800 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = 93AE798A2A7C2A58003B8800 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +360,54 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		93AE79B32A7C4E41003B8800 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		93AE79B62A7C4E73003B8800 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 13.0.0;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		93AE79B42A7C4E41003B8800 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93AE79B32A7C4E41003B8800 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		93AE79B72A7C4E73003B8800 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93AE79B62A7C4E73003B8800 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		93AE79B92A7C4E73003B8800 /* NukeExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93AE79B62A7C4E73003B8800 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeExtensions;
+		};
+		93AE79BB2A7C4E73003B8800 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93AE79B62A7C4E73003B8800 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+		93AE79BD2A7C4E73003B8800 /* NukeVideo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93AE79B62A7C4E73003B8800 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeVideo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 93AE79812A7C2A58003B8800 /* Project object */;
 }
