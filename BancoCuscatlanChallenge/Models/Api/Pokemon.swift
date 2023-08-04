@@ -7,36 +7,9 @@
 
 import Foundation
 
-struct Pokemon {
-    var name: String
-    var image: String
-    var description: String
-
-    init() {
-        name = ""
-        image = ""
-        description = ""
-    }
-}
-
-struct PokedexInformation: Codable {
-    var id: Int
-    var name: String
-    var flavor_text_entries: [PokemonTextEntry]
-}
-
-struct PokemonTextEntry: Codable {
-    var flavor_text: String
-    var language: Language
-    var version: Version
-}
-
-struct Language: Codable {
-    var name: String
-}
-
-struct Version: Codable {
-    var name: String
+struct Pokemon: Codable {
+    var name: String = ""
+    var image: String = ""
 }
 
 struct PokemonSpecieInformation: Codable {

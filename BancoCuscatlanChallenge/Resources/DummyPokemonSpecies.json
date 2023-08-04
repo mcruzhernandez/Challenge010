@@ -1,0 +1,37 @@
+/*
+ DummyPokemonSpecies.strings
+ BancoCuscatlanChallenge
+ 
+ Created by Alejandro Cruz on 8/4/23.
+ 
+ */
+
+{
+    "color": {
+        "name": "green",
+        "url": "https://pokeapi.co/api/v2/pokemon-color/5/"
+    },
+    "flavor_text_entries": [
+    {
+        "flavor_text": "A strange seed was\nplanted on its\nback at birth.\fThe plant sprouts\nand grows with\nthis POKéMON.",
+        "language": {
+            "name": "en",
+            "url": "https://pokeapi.co/api/v2/language/9/"
+        },
+        "version": {
+            "name": "red",
+            "url": "https://pokeapi.co/api/v2/version/1/"
+        }
+    },
+    {
+        "flavor_text": "Una rara semilla le fue plantada en el lomo al nacer.\nLa planta brota y crece con este Pokémon.",
+        "language": {
+            "name": "es",
+            "url": "https://pokeapi.co/api/v2/language/7/"
+        },
+        "version": {
+            "name": "x",
+            "url": "https://pokeapi.co/api/v2/version/23/"
+        }
+    }
+}

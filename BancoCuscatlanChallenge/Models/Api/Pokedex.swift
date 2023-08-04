@@ -8,6 +8,6 @@
 import Foundation
 
 struct Pokedex: Codable {
-    var name: String
-    var url: String
+    var name: String = ""
+    var url: String = ""
 }
