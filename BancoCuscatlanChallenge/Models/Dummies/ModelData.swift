@@ -8,13 +8,13 @@
 import Foundation
 
 final class ModelData: ObservableObject {
-    @Published var dummyPosts: Pokedex = load("DummyPokedex.json")
-    @Published var dummyComments: Pokemon = load("DummyPokemon.json")
-    @Published var dummyPhotos: PokemonSpecies = load("DummyPokemonSpicies.json")
+    @Published var dummyPokedex: Pokedex = load("DummyPokedex.json")
+    @Published var dummyPokemon: Pokemon = load("DummyPokemon.json")
+    @Published var dummyPokemonSpecies: PokemonSpecies = load("DummyPokemonSpecies.json")
     
-    @Published var posts: Pokedex = Pokedex()
-    @Published var photos: Pokemon = Pokemon()
-    @Published var comments: PokemonSpecies = PokemonSpecies()
+    @Published var pokedex: Pokedex = Pokedex()
+    @Published var pokemon: Pokemon = Pokemon()
+    @Published var pokemonSpecies: PokemonSpecies = PokemonSpecies()
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

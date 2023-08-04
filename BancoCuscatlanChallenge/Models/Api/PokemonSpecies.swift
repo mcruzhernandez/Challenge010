@@ -8,26 +8,24 @@
 import Foundation
 
 struct PokemonSpecies: Codable {
-    var id: Int = 0
-    var name: String = ""
-    var color: Color = Color()
+    var color: SpeciesColor = SpeciesColor()
     var flavor_text_entries: [PokemonTextEntry] = [PokemonTextEntry]()
 }
 
+struct SpeciesColor: Codable {
+    var name: String = ""
+}
+
 struct PokemonTextEntry: Codable {
-    var flavor_text: String
-    var language: Language
-    var version: Version
+    var flavor_text: String = ""
+    var language: EntryLanguage = EntryLanguage()
+    var version: EntryVersion = EntryVersion()
 }
 
-struct Language: Codable {
-    var name: String
+struct EntryLanguage: Codable {
+    var name: String = ""
 }
 
-struct Version: Codable {
-    var name: String
-}
-
-struct Color: Codable {
+struct EntryVersion: Codable {
     var name: String = ""
 }

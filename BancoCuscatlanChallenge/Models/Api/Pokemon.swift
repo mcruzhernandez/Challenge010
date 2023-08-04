@@ -8,27 +8,32 @@
 import Foundation
 
 struct Pokemon: Codable {
-    var name: String = ""
-    var image: String = ""
-}
-
-struct PokemonSpecieInformation: Codable {
-    var height: Int
-    var weight: Int
-    var types: [PokemonType]
-    var sprites: PokemonSprite
-}
-
-struct PokemonType: Codable {
-    var slot: Int
-    var type: PokemonTypeInformation
-}
-
-struct PokemonTypeInformation: Codable {
-    var name: String
+    var id = 0
+    var name = ""
+    var height: Int = 0
+    var weight: Int = 0
+    var types: [PokemonType] = [PokemonType]()
+    var sprites: PokemonSprite = PokemonSprite()
+    var stats: [PokemonStats] = [PokemonStats]()
 }
 
 struct PokemonSprite: Codable {
-    var back_default: String
-    var front_default: String
+    var front_default: String = ""
+}
+
+struct PokemonStats: Codable {
+    var base_stat: Int = 0
+    var stat: PokemonStat = PokemonStat()
+}
+
+struct PokemonStat: Codable {
+    var name: String = ""
+}
+
+struct PokemonType: Codable {
+    var type: PokemonTypeInformation = PokemonTypeInformation()
+}
+
+struct PokemonTypeInformation: Codable {
+    var name: String = ""
 }
