@@ -14,9 +14,7 @@ struct PokemonView: View {
     
     @State var pokemon: Pokemon = Pokemon()
     @State var pokemonSpecies: PokemonSpecies = PokemonSpecies()
-    
     @State var loaded: Bool = true
-    
     
     var body: some View {
         NavigationView {
@@ -65,7 +63,8 @@ struct PokemonView_Previews: PreviewProvider {
     static var previews: some View {
         PokemonView(
             pokemon: ModelData().dummyPokemon,
-            pokemonSpecies: ModelData().dummyPokemonSpecies
+            pokemonSpecies: ModelData().dummyPokemonSpecies,
+            loaded: true
         )
     }
 }

@@ -15,41 +15,54 @@ struct PokemonRow: View {
     
     var body: some View {
         VStack {
-            LazyImage(url: URL(string: pokemon.sprites.front_default)) { state in
-                if let image = state.image {
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 265, height: 230)
+            
+            ZStack {
+                RoundedRectangle(cornerRadius: 30)
+                    .frame(height: 160)
+                    .foregroundColor(
+                        Color.findCustomColor(color: pokemonSpecies.color.name)
+                            .opacity(0.6)
+                    )
+                    .padding(.top, 180)
+                    .padding(.leading, 20)
+                    .padding(.trailing, 20)
+                
+                LazyImage(url: URL(string: pokemon.sprites.front_default)) { state in
+                    if let image = state.image {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 265, height: 230)
+                    }
                 }
+                
+                HStack {
+                    ForEach(pokemon.types) { item in
+                        Text(item.type.name)
+                            .padding(.leading, 25)
+                            .padding(.trailing, 25)
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+                            .foregroundColor(
+                                Color.findCustomColor(color: item.type.name)
+                            )
+                            .background(.white)
+                            .clipShape(Capsule())
+                            .overlay(
+                                Capsule()
+                                    .stroke(
+                                        Color.findCustomColor(color: item.type.name),
+                                        lineWidth: 1.5
+                                    )
+                            )
+                    }
+                }
+                .padding(.top, 270)
+
             }
+                        
             
             
-            HStack {
-                ForEach(pokemon.types) { item in
-                    Text(item.type.name)
-                        .padding(.leading, 25)
-                        .padding(.trailing, 25)
-                        .padding(.top, 10)
-                        .padding(.bottom, 10)
-                        .foregroundColor(
-                            Color.findCustomColor(color: item.type.name)
-                        )
-                        .background(
-                            Color.findCustomColor(color: item.type.name)
-                                .opacity(0.3)
-                        )
-                        .clipShape(Capsule())
-                        .overlay(
-                            Capsule()
-                                .stroke(
-                                    Color.findCustomColor(color: item.type.name),
-                                    lineWidth: 1.5
-                                )
-                        )
-                }
-            }
-            .padding(.top)
             
             HStack(alignment: .center) {
                 
@@ -82,8 +95,6 @@ struct PokemonRow: View {
                 
                 HStack(alignment: .center) {
                     Spacer()
-                    
-                    
                     
                     Image("height")
                         .resizable()

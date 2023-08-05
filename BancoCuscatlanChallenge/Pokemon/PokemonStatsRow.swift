@@ -13,28 +13,32 @@ struct PokemonStatsRow: View {
     @State var pokemonSpecies: PokemonSpecies
     
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .leading) {
             Text("Estadísticas")
                 .bold()
                 .font(.system(size: 24))
                 .foregroundColor(Color.Blue4)
             
             ForEach(pokemon.stats) { item in
-                HStack(alignment: .center) {
+                
+                
+                HStack {
                     Text(item.stat.name)
+                        .frame(minWidth: 150, alignment: .leading)
                         .font(.system(size: 20, weight: .regular))
                         .foregroundColor(.Gray5)
                     
                     ProgressView(value: Double(item.base_stat), total: 150)
-                        .frame(height: 22)
+                        .frame(height: 16)
                         .progressViewStyle(
                             CustomProgressStyle(
                                 fillColor: Color.findCustomColor(color: pokemonSpecies.color.name),
                                 unfilledColor: Color.findCustomColor(color: pokemonSpecies.color.name),
-                                height: 22)
+                                height: 16)
                         )
                     
                     Text("\(item.base_stat)")
+                        .frame(minWidth: 40, alignment: .trailing)
                         .font(.system(size: 20, weight: .heavy))
                         .foregroundColor(.Gray5)
                 }
