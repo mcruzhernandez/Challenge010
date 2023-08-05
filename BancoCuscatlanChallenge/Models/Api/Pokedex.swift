@@ -13,9 +13,15 @@ struct Pokedex: Codable {
     var pokemon_entries: [PokemonEntry] = [PokemonEntry]()
 }
 
-struct PokemonEntry: Codable {
+struct PokemonEntry: Codable, Identifiable {
+    let id = UUID()
     var entry_number: Int = 0
     var pokemon_species: PokemonEntrySpecies = PokemonEntrySpecies()
+    
+    enum CodingKeys: String, CodingKey {
+        case entry_number
+        case pokemon_species
+    }
 }
 
 struct PokemonEntrySpecies: Codable {

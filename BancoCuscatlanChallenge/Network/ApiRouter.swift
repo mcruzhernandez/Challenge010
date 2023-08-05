@@ -21,10 +21,10 @@ enum ApiRouter {
     // path url
     var path: String {
         switch self {
-        case .pokedex:
-            return "pokedex/"
-        case .pokemon:
-            return "pokemon/"
+        case .pokedex(let region):
+            return "pokedex/\(region)"
+        case .pokemon(let pokemon):
+            return "pokemon/\(pokemon)"
         }
     }
     
@@ -52,10 +52,11 @@ extension ApiRouter: URLRequestConvertible {
   func asURLRequest() throws -> URLRequest {
     
     let url = baseURL.appendingPathComponent(path)
+    
     var request = URLRequest(url: url)
     request.method = method
-    request = try URLEncodedFormParameterEncoder(destination: .methodDependent)
-    .encode(parameters, into: request)
+//    request = try URLEncodedFormParameterEncoder(destination: .methodDependent)
+//    .encode(parameters, into: request)
     
     return request
   }
