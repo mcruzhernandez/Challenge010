@@ -82,7 +82,7 @@ struct PokedexView: View {
                             pokedex.pokemon_entries.filter {
                                 searchText.isEmpty ||
                                 $0.pokemon_species.name.localizedCaseInsensitiveContains(searchText) ||
-                                "#\($0.entry_number)" == searchText
+                                "#\($0.entry_number)".localizedCaseInsensitiveContains(searchText)
                             }
                         ) { pokemon in
                             PokedexRow(
