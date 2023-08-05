@@ -10,20 +10,38 @@ import Alamofire
 
 struct PokemonView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     @State var pokemon: Pokemon = Pokemon()
     @State var pokemonSpecies: PokemonSpecies = PokemonSpecies()
     
     @State var loaded: Bool = true
     
+    
     var body: some View {
-        ScrollView {
-            PokemonRow(pokemon: pokemon, pokemonSpecies: pokemonSpecies)
-            if loaded {
-                PokemonStatsRow(pokemon: pokemon, pokemonSpecies: pokemonSpecies)
+        NavigationView {
+            ScrollView {
+                if loaded {
+                    PokemonRow(pokemon: pokemon, pokemonSpecies: pokemonSpecies)
+                    PokemonStatsRow(pokemon: pokemon, pokemonSpecies: pokemonSpecies)
+                }
+            }
+            .onAppear(perform: loadPokemonSpecies)
+            .background(Color.Gray1)
+            
+            
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+            NavBackButton(dismiss: self.dismiss, pokemonName: pokemon.name)
+        )
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Text("#\(pokemon.id)")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(.Gray4)
             }
         }
-        .onAppear(perform: loadPokemonSpecies)
-        .background(Color.Gray1)
     }
     
     func loadPokemonSpecies() {

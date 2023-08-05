@@ -17,25 +17,27 @@ struct CustomProgressStyle: ProgressViewStyle {
         let progress = configuration.fractionCompleted ?? 0.0
  
         HStack() {
-            RoundedRectangle(cornerRadius: height / 2)
-                .fill(unfilledColor.opacity(0.5))
-                .frame(height: height)
-                .frame(width: .infinity)
-                .overlay(alignment: .leading) {
-                    GeometryReader { geometry in
-                        RoundedRectangle(cornerRadius: height / 2)
-                            .fill(fillColor)
-                            .frame(height: height)
-                            .frame(width: geometry.size.width * progress)
-                            .overlay {
-                                if let currentValueLabel = configuration.currentValueLabel {
-                                    currentValueLabel
-                                        .font(.headline)
-                                        .foregroundColor(.white)
+            GeometryReader { geometry in
+                RoundedRectangle(cornerRadius: height / 2)
+                    .fill(unfilledColor.opacity(0.5))
+                    .frame(height: height)
+                    .frame(width: geometry.size.width)
+                    .overlay(alignment: .leading) {
+                        GeometryReader { geometry in
+                            RoundedRectangle(cornerRadius: height / 2)
+                                .fill(fillColor)
+                                .frame(height: height)
+                                .frame(width: geometry.size.width * progress)
+                                .overlay {
+                                    if let currentValueLabel = configuration.currentValueLabel {
+                                        currentValueLabel
+                                            .font(.headline)
+                                            .foregroundColor(.white)
                                 }
                             }
+                        }
                     }
-                }
+            }
         }
         
     }

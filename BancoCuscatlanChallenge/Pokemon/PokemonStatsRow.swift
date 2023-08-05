@@ -25,8 +25,8 @@ struct PokemonStatsRow: View {
                         .font(.system(size: 20, weight: .regular))
                         .foregroundColor(.Gray5)
                     
-                    ProgressView(value: Double(1), total: 150)
-                        
+                    ProgressView(value: Double(item.base_stat), total: 150)
+                        .frame(height: 22)
                         .progressViewStyle(
                             CustomProgressStyle(
                                 fillColor: Color.findCustomColor(color: pokemonSpecies.color.name),

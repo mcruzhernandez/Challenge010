@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93479D792A7F0EC10049BFCA /* CustomNavBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93479D782A7F0EC10049BFCA /* CustomNavBackButton.swift */; };
 		934EC5032A7E1D2800E00E1F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934EC5022A7E1D2800E00E1F /* Colors.swift */; };
 		934EC5052A7E303000E00E1F /* PokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934EC5042A7E303000E00E1F /* PokemonView.swift */; };
 		934EC5072A7E305100E00E1F /* PokemonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934EC5062A7E305100E00E1F /* PokemonRow.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93479D782A7F0EC10049BFCA /* CustomNavBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBackButton.swift; sourceTree = "<group>"; };
 		934EC5022A7E1D2800E00E1F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		934EC5042A7E303000E00E1F /* PokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonView.swift; sourceTree = "<group>"; };
 		934EC5062A7E305100E00E1F /* PokemonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRow.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				934EC5022A7E1D2800E00E1F /* Colors.swift */,
 				93D252222A7EF786008A5149 /* CustomProgressStyle.swift */,
+				93479D782A7F0EC10049BFCA /* CustomNavBackButton.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				939821D12A7C6B6D001221E0 /* Pokedex.swift in Sources */,
 				939821F82A7D66BF001221E0 /* ModelData.swift in Sources */,
 				934EC5032A7E1D2800E00E1F /* Colors.swift in Sources */,
+				93479D792A7F0EC10049BFCA /* CustomNavBackButton.swift in Sources */,
 				934EC5052A7E303000E00E1F /* PokemonView.swift in Sources */,
 				93B5D6D22A7D889900D3EED9 /* PokedexRow.swift in Sources */,
 				939821C72A7C52AB001221E0 /* ApiRouter.swift in Sources */,
