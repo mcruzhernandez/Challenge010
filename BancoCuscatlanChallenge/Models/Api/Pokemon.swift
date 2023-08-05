@@ -21,9 +21,15 @@ struct PokemonSprite: Codable {
     var front_default: String = ""
 }
 
-struct PokemonStats: Codable {
+struct PokemonStats: Codable, Identifiable {
+    var id = UUID()
     var base_stat: Int = 0
     var stat: PokemonStat = PokemonStat()
+    
+    enum CodingKeys: String, CodingKey {
+        case base_stat
+        case stat
+    }
 }
 
 struct PokemonStat: Codable {
