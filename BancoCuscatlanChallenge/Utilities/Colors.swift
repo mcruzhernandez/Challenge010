@@ -34,4 +34,31 @@ extension Color {
     
     static let Green1 = Color("Green1")
     static let Green2 = Color("Green2")
+    
+    static func findCustomColor(color: String) -> Color {
+        switch color.lowercased() {
+        case "fire", "red":
+            return Color.Red1
+        case "flying":
+            return Color.Blue4
+        case "grass", "bug", "green":
+            return Color.Green2
+        case "poison", "ghost", "dragon", "purple":
+            return Color.Purple2
+        case "normal", "electric", "yellow":
+            return Color.Yellow2
+        case "ground", "fighting", "rock", "brown":
+            return Color.Yellow3
+        case "ice", "white":
+            return Color.Blue1
+        case "water", "blue":
+            return Color.Blue3
+        case "psychic", "fairy", "pink":
+            return Color.Pink1
+        case "steel", "gray":
+            return Color.Gray3
+        default:
+            return Color.black
+        }
+    }
 }

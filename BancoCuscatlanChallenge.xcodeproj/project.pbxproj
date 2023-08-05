@@ -33,6 +33,7 @@
 		93AE79BE2A7C4E73003B8800 /* NukeVideo in Frameworks */ = {isa = PBXBuildFile; productRef = 93AE79BD2A7C4E73003B8800 /* NukeVideo */; };
 		93B5D6D02A7D888500D3EED9 /* PokedexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B5D6CF2A7D888500D3EED9 /* PokedexView.swift */; };
 		93B5D6D22A7D889900D3EED9 /* PokedexRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B5D6D12A7D889900D3EED9 /* PokedexRow.swift */; };
+		93D252232A7EF786008A5149 /* CustomProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D252222A7EF786008A5149 /* CustomProgressStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		93AE79932A7C2A5A003B8800 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		93B5D6CF2A7D888500D3EED9 /* PokedexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexView.swift; sourceTree = "<group>"; };
 		93B5D6D12A7D889900D3EED9 /* PokedexRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexRow.swift; sourceTree = "<group>"; };
+		93D252222A7EF786008A5149 /* CustomProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				934EC5022A7E1D2800E00E1F /* Colors.swift */,
+				93D252222A7EF786008A5149 /* CustomProgressStyle.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -162,7 +165,6 @@
 		93AE79802A7C2A58003B8800 = {
 			isa = PBXGroup;
 			children = (
-				934EC5012A7E1D1800E00E1F /* Utilities */,
 				93AE798B2A7C2A58003B8800 /* BancoCuscatlanChallenge */,
 				93AE798A2A7C2A58003B8800 /* Products */,
 			);
@@ -179,6 +181,7 @@
 		93AE798B2A7C2A58003B8800 /* BancoCuscatlanChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				934EC5012A7E1D1800E00E1F /* Utilities */,
 				939821E72A7C723E001221E0 /* Resources */,
 				939821DA2A7C6FAF001221E0 /* Pokedex */,
 				939821D92A7C6FA0001221E0 /* Pokemon */,
@@ -293,6 +296,7 @@
 				93B5D6D22A7D889900D3EED9 /* PokedexRow.swift in Sources */,
 				939821C72A7C52AB001221E0 /* ApiRouter.swift in Sources */,
 				939821FC2A7D6784001221E0 /* PokemonSpecies.swift in Sources */,
+				93D252232A7EF786008A5149 /* CustomProgressStyle.swift in Sources */,
 				939821CD2A7C6110001221E0 /* ResponseError.swift in Sources */,
 				939821D42A7C6B8A001221E0 /* Pokemon.swift in Sources */,
 				93B5D6D02A7D888500D3EED9 /* PokedexView.swift in Sources */,

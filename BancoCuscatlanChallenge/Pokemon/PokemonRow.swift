@@ -15,35 +15,111 @@ struct PokemonRow: View {
     
     var body: some View {
         VStack {
-            LazyImage(url: URL(string: pokemon.sprites.front_default))
-                .aspectRatio(240.0, contentMode: .fit)
-                .frame(width: 265.0, height: 230.0)
-            Text(pokemon.types[0].type.name)
-            
-            HStack {
-                
-                HStack {
-                    Image("Pokedex")
-                    VStack {
-                        Text("\(pokemon.weight)")
-                        Text("Peso")
-                    }
+            LazyImage(url: URL(string: pokemon.sprites.front_default)) { state in
+                if let image = state.image {
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 265, height: 230)
                 }
-                
-                HStack {
-                    Image("Pokedex")
-                    VStack{
-                        Text("\(pokemon.height)")
-                        Text("Altura")
-                    }
-                }
-                
             }
             
-            Text(pokemonSpecies.flavor_text_entries[0].flavor_text)
-                .frame(maxWidth: .infinity)
+            
+            HStack {
+                ForEach(pokemon.types) { item in
+                    Text(item.type.name)
+                        .padding(.leading, 25)
+                        .padding(.trailing, 25)
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                        .foregroundColor(
+                            Color.findCustomColor(color: item.type.name)
+                        )
+                        .background(
+                            Color.findCustomColor(color: item.type.name)
+                                .opacity(0.3)
+                        )
+                        .clipShape(Capsule())
+                        .overlay(
+                            Capsule()
+                                .stroke(
+                                    Color.findCustomColor(color: item.type.name),
+                                    lineWidth: 1.5
+                                )
+                        )
+                }
+            }
+            .padding(.top)
+            
+            HStack(alignment: .center) {
+                
+                HStack(alignment: .center) {
+                    Spacer()
+                    
+                    Image("weight")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    VStack {
+                        Text("\(pokemon.weight)")
+                            .bold()
+                            .font(.system(size: 20))
+                            .foregroundColor(.Blue4)
+                        Text("Peso")
+                            .font(.system(size: 16))
+                            .foregroundColor(.Blue2)
+                        
+                    }
+                    .padding(.leading, 8)
+                    
+                    Spacer()
+                }
+                .padding(.top)
+                .padding(.leading, 20)
+                .padding(.bottom)
+                
+                Divider()
+                    .frame(height: 45)
+                
+                HStack(alignment: .center) {
+                    Spacer()
+                    
+                    
+                    
+                    Image("height")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    VStack{
+                        Text("\(pokemon.height)")
+                            .bold()
+                            .font(.system(size: 20))
+                            .foregroundColor(.Blue4)
+                        Text("Altura")
+                            .font(.system(size: 16))
+                            .foregroundColor(.Blue2)
+                    }
+                    .padding(.leading, 5)
+                    
+                    Spacer()
+                }
+                .padding(.trailing, 20)
+            }
+            .background(.white)
+            .cornerRadius(15)
+            .padding()
+            
+            
+            HStack {
+                Text(pokemonSpecies.flavor_text_entries.first(where: { entry in
+                    entry.language.name == "es"
+                })?.flavor_text ?? "Descripción no encontrada" )
+                .padding(.leading)
+                .padding(.trailing)
+                .foregroundColor(.Gray4)
+            }
                 
         }
+        
+        
     }
 }
 

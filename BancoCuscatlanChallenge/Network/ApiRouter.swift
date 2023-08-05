@@ -12,6 +12,7 @@ enum ApiRouter {
     
     case pokedex(region: String)
     case pokemon(number: String)
+    case pokemonSpecies(number: String)
     
     // base url
     var baseURL: URL {
@@ -25,13 +26,15 @@ enum ApiRouter {
             return "pokedex/\(region)"
         case .pokemon(let pokemon):
             return "pokemon/\(pokemon)"
+        case .pokemonSpecies(number: let pokemon):
+            return "pokemon-species/\(pokemon)"
         }
     }
     
     // request type
     var method: HTTPMethod {
         switch self {
-        case .pokedex, .pokemon:
+        case .pokedex, .pokemon, .pokemonSpecies:
             return .get
         }
     }
@@ -42,6 +45,8 @@ enum ApiRouter {
         case let .pokedex(region: region):
             return ["region": region]
         case let .pokemon(number: number):
+            return ["number": number]
+        case let .pokemonSpecies(number: number):
             return ["number": number]
         }
     }

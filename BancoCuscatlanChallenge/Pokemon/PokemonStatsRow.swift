@@ -10,26 +10,33 @@ import SwiftUI
 struct PokemonStatsRow: View {
     
     @State var pokemon: Pokemon
+    @State var pokemonSpecies: PokemonSpecies
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             Text("Estadísticas")
                 .bold()
                 .font(.system(size: 24))
                 .foregroundColor(Color.Blue4)
             
             ForEach(pokemon.stats) { item in
-                HStack {
+                HStack(alignment: .center) {
                     Text(item.stat.name)
+                        .font(.system(size: 20, weight: .regular))
+                        .foregroundColor(.Gray5)
                     
-                    ProgressView(
-                        value: Double(item.base_stat),
-                        total: 150
-                    )
-                    .tint(Color.Yellow2)
-                    .background(Color.Yellow1)
+                    ProgressView(value: Double(1), total: 150)
+                        
+                        .progressViewStyle(
+                            CustomProgressStyle(
+                                fillColor: Color.findCustomColor(color: pokemonSpecies.color.name),
+                                unfilledColor: Color.findCustomColor(color: pokemonSpecies.color.name),
+                                height: 22)
+                        )
                     
                     Text("\(item.base_stat)")
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundColor(.Gray5)
                 }
             }
         }
@@ -40,7 +47,8 @@ struct PokemonStatsRow: View {
 struct PokemonStatsRow_Previews: PreviewProvider {
     static var previews: some View {
         PokemonStatsRow(
-            pokemon: ModelData().dummyPokemon
+            pokemon: ModelData().dummyPokemon,
+            pokemonSpecies: ModelData().dummyPokemonSpecies
         )
     }
 }

@@ -22,7 +22,7 @@ struct PokemonSprite: Codable {
 }
 
 struct PokemonStats: Codable, Identifiable {
-    var id = UUID()
+    let id = UUID()
     var base_stat: Int = 0
     var stat: PokemonStat = PokemonStat()
     
@@ -36,8 +36,13 @@ struct PokemonStat: Codable {
     var name: String = ""
 }
 
-struct PokemonType: Codable {
+struct PokemonType: Codable, Identifiable {
+    let id = UUID()
     var type: PokemonTypeInformation = PokemonTypeInformation()
+    
+    enum CodingKeys: String, CodingKey {
+        case type
+    }
 }
 
 struct PokemonTypeInformation: Codable {

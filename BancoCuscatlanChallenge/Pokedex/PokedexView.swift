@@ -86,9 +86,7 @@ struct PokedexView: View {
                             }
                         ) { pokemon in
                             PokedexRow(
-                                pokemon: Pokemon(
-                                    id: pokemon.entry_number
-                                )
+                                pokemon: Pokemon(id: pokemon.entry_number)
                             )
                         }
                     }
