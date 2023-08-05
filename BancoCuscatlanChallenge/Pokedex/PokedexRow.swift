@@ -16,38 +16,20 @@ struct PokedexRow: View {
     var body: some View {
         VStack {
             Text("#\(pokemon.id)")
-                .foregroundColor(
-                    Color(
-                        red: 170 / 255,
-                        green: 170 / 255,
-                        blue: 170 / 255
-                    )
-                )
+                .foregroundColor(Color.Gray3)
                 .font(.system(size: 16, weight: .medium))
             
             LazyImage(url: URL(string: pokemon.sprites.front_default))
                 .frame(width: 100.0, height: 100.0)
             Text(pokemon.name)
-                .foregroundColor(
-                    Color(
-                        red: 1 / 255,
-                        green: 66 / 255,
-                        blue: 106 / 255)
-                )
-                .font(.system(size: 36, weight: .semibold))
+                .foregroundColor(Color.Blue4)
+                .font(.system(size: 18, weight: .semibold))
 
         }
         .onAppear(perform: loadPokemon)
         .padding(.all)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            Color(
-                red: 120 / 255,
-                green: 177 / 255,
-                blue: 181 / 255,
-                opacity: 0.1 / 1
-            )
-        )
+        .background(Color(.white))
         .cornerRadius(15)
     }
     

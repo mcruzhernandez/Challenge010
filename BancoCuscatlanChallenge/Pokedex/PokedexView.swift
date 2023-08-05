@@ -20,18 +20,59 @@ struct PokedexView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(alignment: .leading) {
+                
+                // Header
+                HStack {
+                    Image("Pokedex")
+                        .frame(width: 46.0, height: 46.0)
+                        .padding(.leading)
+                    
+                    Text("Pokédex")
+                        .bold()
+                        .font(.system(size: 30))
+                        .foregroundColor(Color.Blue3)
+                        .padding(.leading, 5)
+                }
+                
+                
+                Group {
+                    Text("¡Hola, ").fontWeight(.medium)
+                    +
+                    Text("bienvenido!").bold()
+                }
+                .font(.system(size: 24))
+                .foregroundColor(Color.Blue4)
+                .padding(.top)
+                .padding(.leading)
+                
                 // search textbar
-                VStack {
-                    TextField(" Search", text: $searchText)
-                        .frame(height: 60.0)
-                        .border(.white, width: 0.5)
+                ZStack(alignment: .trailing) {
+                    
+                    Circle()
+                        .fill(Color.Yellow2)
+                        .frame(width: 32.0, height: 32.0)
+                        .padding(.trailing, 20)
+                        .overlay(
+                            Image("Search")
+                                .padding(.trailing, 20)
+                        )
+                    
+                    TextField("Search", text: $searchText)
+                        .frame(height: 44.0)
+                        .foregroundColor(Color.Gray5)
+                        .padding(.leading)
                         .padding(.leading)
                         .padding(.trailing)
-                        .padding(.bottom)
-                        .foregroundColor(.white)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 22.0)
+                                .stroke(Color.Gray3, lineWidth: 1.0)
+                                .padding(.leading)
+                                .padding(.trailing)
+                        )
+                    
                 }
-                .background(.teal)
+                
                 
                 // Main body
                 ScrollView {
@@ -58,13 +99,8 @@ struct PokedexView: View {
                 
             }
             .onAppear(perform: loadPokedex)
-            .background(
-                Color(
-                    red: 248 / 255,
-                    green: 248 / 255,
-                    blue: 248 / 255
-                )
-            )
+            .background(Color.Gray1)
+            .padding(EdgeInsets())
         }
     }
     
@@ -77,7 +113,6 @@ struct PokedexView: View {
                     print(pokedex)
                     self.pokedex = pokedex
                 default:
-                    print(response.error)
                     break
                 }
             }
