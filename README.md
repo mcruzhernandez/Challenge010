@@ -1,4 +1,4 @@
-# BancoCuscatlanChallenge
+# BancoCuscatlanChallenge (2 revision)
 
 Este proyecto fue realizado utilizando Xcode y SwiftUI
 
