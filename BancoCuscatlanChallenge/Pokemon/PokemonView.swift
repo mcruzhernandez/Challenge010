@@ -14,7 +14,7 @@ struct PokemonView: View {
     
     @State var pokemon: Pokemon = Pokemon()
     @State var pokemonSpecies: PokemonSpecies = PokemonSpecies()
-    @State var loaded: Bool = true
+    @State var loaded: Bool = false
     
     var body: some View {
         NavigationView {
@@ -26,8 +26,6 @@ struct PokemonView: View {
             }
             .onAppear(perform: loadPokemonSpecies)
             .background(Color.Gray1)
-            
-            
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
@@ -54,7 +52,6 @@ struct PokemonView: View {
                     self.loaded.toggle()
                     break
                 }
-                
             }
     }
 }
@@ -63,8 +60,7 @@ struct PokemonView_Previews: PreviewProvider {
     static var previews: some View {
         PokemonView(
             pokemon: ModelData().dummyPokemon,
-            pokemonSpecies: ModelData().dummyPokemonSpecies,
-            loaded: true
+            pokemonSpecies: ModelData().dummyPokemonSpecies
         )
     }
 }

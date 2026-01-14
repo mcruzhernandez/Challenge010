@@ -35,7 +35,6 @@ struct PokedexView: View {
                         .padding(.leading, 5)
                 }
                 
-                
                 Group {
                     Text("¡Hola, ").fontWeight(.medium)
                     +
@@ -73,11 +72,9 @@ struct PokedexView: View {
                     
                 }
                 
-                
                 // Main body
                 ScrollView {
                     LazyVGrid(columns: columnGrid) {
-
                         ForEach(
                             pokedex.pokemon_entries.filter {
                                 searchText.isEmpty ||
@@ -94,7 +91,6 @@ struct PokedexView: View {
                     .padding(.all)
                 }
                 
-                
             }
             .onAppear(perform: loadPokedex)
             .background(Color.Gray1)
@@ -103,7 +99,7 @@ struct PokedexView: View {
     }
     
     func loadPokedex() {
-        AF.request(ApiRouter.pokedex(region: "2"))
+        AF.request(ApiRouter.pokedex(region: "kanto"))
             .validate()
             .responseDecodable(of: Pokedex.self) { response in
                 switch response.result {

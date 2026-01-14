@@ -53,16 +53,18 @@ enum ApiRouter {
     
 }
 
+
+// Alamofire Delegate
 extension ApiRouter: URLRequestConvertible {
-  func asURLRequest() throws -> URLRequest {
     
-    let url = baseURL.appendingPathComponent(path)
+    func asURLRequest() throws -> URLRequest {
+        let url = baseURL.appendingPathComponent(path)
+        
+        var request = URLRequest(url: url)
+        request.method = method
+        request = try URLEncodedFormParameterEncoder(destination: .methodDependent).encode(parameters, into: request)
+        
+        return request
+    }
     
-    var request = URLRequest(url: url)
-    request.method = method
-//    request = try URLEncodedFormParameterEncoder(destination: .methodDependent)
-//    .encode(parameters, into: request)
-    
-    return request
-  }
 }
