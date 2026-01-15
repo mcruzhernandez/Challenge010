@@ -15,7 +15,7 @@ struct PokedexRow: View {
     
     var body: some View {
         NavigationLink(
-            destination: PokemonView(pokemon: pokemon, loaded: false)
+            destination: PokemonView(pokemon: pokemon)
         ) {
             VStack {
                 Text("#\(pokemon.id)")

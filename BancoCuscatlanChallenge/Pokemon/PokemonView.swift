@@ -6,25 +6,25 @@
 //
 
 import SwiftUI
-import Alamofire
 
 struct PokemonView: View {
     
     @Environment(\.dismiss) private var dismiss
     
     @State var pokemon: Pokemon = Pokemon()
-    @State var pokemonSpecies: PokemonSpecies = PokemonSpecies()
-    @State var loaded: Bool = false
+    @StateObject var viewModel = PokemonViewModel()
     
     var body: some View {
         NavigationView {
             ScrollView {
-                if loaded {
-                    PokemonRow(pokemon: pokemon, pokemonSpecies: pokemonSpecies)
-                    PokemonStatsRow(pokemon: pokemon, pokemonSpecies: pokemonSpecies)
+                if viewModel.loaded {
+                    PokemonRow(pokemon: pokemon, pokemonSpecies: viewModel.pokemonSpecies)
+                    PokemonStatsRow(pokemon: pokemon, pokemonSpecies: viewModel.pokemonSpecies)
                 }
             }
-            .onAppear(perform: loadPokemonSpecies)
+            .onAppear {
+                viewModel.loadPokemonSpecies(pokemonId: "\(pokemon.id)")
+            }
             .background(Color.Gray1)
         }
         .navigationBarBackButtonHidden(true)
@@ -39,28 +39,16 @@ struct PokemonView: View {
             }
         }
     }
-    
-    func loadPokemonSpecies() {
-        AF.request(ApiRouter.pokemonSpecies(number: "\(pokemon.id)"))
-            .validate()
-            .responseDecodable(of: PokemonSpecies.self) { response in
-                switch response.result {
-                case .success(let pokemonSpecies):
-                    self.loaded.toggle()
-                    self.pokemonSpecies = pokemonSpecies
-                default:
-                    self.loaded.toggle()
-                    break
-                }
-            }
-    }
 }
 
 struct PokemonView_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonView(
+        let vm = PokemonViewModel()
+        vm.pokemonSpecies = ModelData().dummyPokemonSpecies
+        
+        return PokemonView(
             pokemon: ModelData().dummyPokemon,
-            pokemonSpecies: ModelData().dummyPokemonSpecies
+            viewModel: vm
         )
     }
 }

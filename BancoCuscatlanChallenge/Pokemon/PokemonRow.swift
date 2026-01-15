@@ -14,9 +14,11 @@ struct PokemonRow: View {
     @State var pokemonSpecies: PokemonSpecies
     
     var body: some View {
+        
         VStack {
             
             ZStack {
+                
                 RoundedRectangle(cornerRadius: 30)
                     .frame(height: 160)
                     .foregroundColor(
@@ -60,8 +62,6 @@ struct PokemonRow: View {
                 .padding(.top, 270)
 
             }
-                        
-            
             
             
             HStack(alignment: .center) {
@@ -130,8 +130,8 @@ struct PokemonRow: View {
                 
         }
         
-        
     }
+    
 }
 
 struct PokemonRow_Previews: PreviewProvider {

@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
-import Alamofire
 
 struct PokedexView: View {
     @EnvironmentObject var modelData: ModelData
     
-    @State var pokedex = Pokedex()
+    @StateObject var viewModel = PokedexViewModel()
     @State var searchText: String = ""
     
     var columnGrid: [GridItem] = Array(
@@ -76,7 +75,7 @@ struct PokedexView: View {
                 ScrollView {
                     LazyVGrid(columns: columnGrid) {
                         ForEach(
-                            pokedex.pokemon_entries.filter {
+                            viewModel.pokedex.pokemon_entries.filter {
                                 searchText.isEmpty ||
                                 $0.pokemon_species.name.localizedCaseInsensitiveContains(searchText) ||
                                 "#\($0.entry_number)".localizedCaseInsensitiveContains(searchText)
@@ -92,30 +91,22 @@ struct PokedexView: View {
                 }
                 
             }
-            .onAppear(perform: loadPokedex)
+            .onAppear {
+                viewModel.loadPokedex(region: "kanto")
+            }
             .background(Color.Gray1)
             .padding(EdgeInsets())
         }
     }
     
-    func loadPokedex() {
-        AF.request(ApiRouter.pokedex(region: "kanto"))
-            .validate()
-            .responseDecodable(of: Pokedex.self) { response in
-                switch response.result {
-                case .success(let pokedex):
-                    print(pokedex)
-                    self.pokedex = pokedex
-                default:
-                    break
-                }
-            }
-    }
 }
 
 struct PokedexView_Previews: PreviewProvider {
     static var previews: some View {
-        PokedexView(pokedex: ModelData().dummyPokedex)
+        let vm = PokedexViewModel()
+        vm.pokedex = ModelData().dummyPokedex
+        
+        return PokedexView(viewModel: vm)
             .environmentObject(ModelData())
     }
 }
