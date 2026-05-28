@@ -25,7 +25,7 @@
 		939821F82A7D66BF001221E0 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939821F72A7D66BF001221E0 /* ModelData.swift */; };
 		939821FA2A7D6718001221E0 /* DummyPokemonSpecies.json in Resources */ = {isa = PBXBuildFile; fileRef = 939821F92A7D6718001221E0 /* DummyPokemonSpecies.json */; };
 		939821FC2A7D6784001221E0 /* PokemonSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939821FB2A7D6784001221E0 /* PokemonSpecies.swift */; };
-		93AE798D2A7C2A58003B8800 /* BancoCuscatlanChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AE798C2A7C2A58003B8800 /* BancoCuscatlanChallengeApp.swift */; };
+		93AE798D2A7C2A58003B8800 /* IOSPokedexDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AE798C2A7C2A58003B8800 /* IOSPokedexDemo.swift */; };
 		93AE798F2A7C2A58003B8800 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AE798E2A7C2A58003B8800 /* ContentView.swift */; };
 		93AE79912A7C2A5A003B8800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AE79902A7C2A5A003B8800 /* Assets.xcassets */; };
 		93AE79942A7C2A5A003B8800 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AE79932A7C2A5A003B8800 /* Preview Assets.xcassets */; };
@@ -58,8 +58,8 @@
 		939821F72A7D66BF001221E0 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		939821F92A7D6718001221E0 /* DummyPokemonSpecies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DummyPokemonSpecies.json; sourceTree = "<group>"; };
 		939821FB2A7D6784001221E0 /* PokemonSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSpecies.swift; sourceTree = "<group>"; };
-		93AE79892A7C2A58003B8800 /* BancoCuscatlanChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BancoCuscatlanChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		93AE798C2A7C2A58003B8800 /* BancoCuscatlanChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BancoCuscatlanChallengeApp.swift; sourceTree = "<group>"; };
+		93AE79892A7C2A58003B8800 /* iOSPokedexDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSPokedexDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93AE798C2A7C2A58003B8800 /* IOSPokedexDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSPokedexDemo.swift; sourceTree = "<group>"; };
 		93AE798E2A7C2A58003B8800 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		93AE79902A7C2A5A003B8800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93AE79932A7C2A5A003B8800 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		93AE79802A7C2A58003B8800 = {
 			isa = PBXGroup;
 			children = (
-				93AE798B2A7C2A58003B8800 /* BancoCuscatlanChallenge */,
+				93AE798B2A7C2A58003B8800 /* iOSPokedexDemo */,
 				93AE798A2A7C2A58003B8800 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -182,12 +182,12 @@
 		93AE798A2A7C2A58003B8800 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				93AE79892A7C2A58003B8800 /* BancoCuscatlanChallenge.app */,
+				93AE79892A7C2A58003B8800 /* iOSPokedexDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		93AE798B2A7C2A58003B8800 /* BancoCuscatlanChallenge */ = {
+		93AE798B2A7C2A58003B8800 /* iOSPokedexDemo */ = {
 			isa = PBXGroup;
 			children = (
 				934EC5012A7E1D1800E00E1F /* Utilities */,
@@ -196,12 +196,12 @@
 				939821D92A7C6FA0001221E0 /* Pokemon */,
 				939821CA2A7C60F7001221E0 /* Models */,
 				939821C32A7C51CD001221E0 /* Network */,
-				93AE798C2A7C2A58003B8800 /* BancoCuscatlanChallengeApp.swift */,
+				93AE798C2A7C2A58003B8800 /* IOSPokedexDemo.swift */,
 				93AE798E2A7C2A58003B8800 /* ContentView.swift */,
 				93AE79902A7C2A5A003B8800 /* Assets.xcassets */,
 				93AE79922A7C2A5A003B8800 /* Preview Content */,
 			);
-			path = BancoCuscatlanChallenge;
+			path = iOSPokedexDemo;
 			sourceTree = "<group>";
 		};
 		93AE79922A7C2A5A003B8800 /* Preview Content */ = {
@@ -215,9 +215,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		93AE79882A7C2A58003B8800 /* BancoCuscatlanChallenge */ = {
+		93AE79882A7C2A58003B8800 /* iOSPokedexDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93AE79972A7C2A5A003B8800 /* Build configuration list for PBXNativeTarget "BancoCuscatlanChallenge" */;
+			buildConfigurationList = 93AE79972A7C2A5A003B8800 /* Build configuration list for PBXNativeTarget "iOSPokedexDemo" */;
 			buildPhases = (
 				93AE79852A7C2A58003B8800 /* Sources */,
 				93AE79862A7C2A58003B8800 /* Frameworks */,
@@ -227,7 +227,7 @@
 			);
 			dependencies = (
 			);
-			name = BancoCuscatlanChallenge;
+			name = iOSPokedexDemo;
 			packageProductDependencies = (
 				93AE79B42A7C4E41003B8800 /* Alamofire */,
 				93AE79B72A7C4E73003B8800 /* Nuke */,
@@ -236,7 +236,7 @@
 				93AE79BD2A7C4E73003B8800 /* NukeVideo */,
 			);
 			productName = BancoCuscatlanChallenge;
-			productReference = 93AE79892A7C2A58003B8800 /* BancoCuscatlanChallenge.app */;
+			productReference = 93AE79892A7C2A58003B8800 /* iOSPokedexDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +254,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 93AE79842A7C2A58003B8800 /* Build configuration list for PBXProject "BancoCuscatlanChallenge" */;
+			buildConfigurationList = 93AE79842A7C2A58003B8800 /* Build configuration list for PBXProject "iOSPokedexDemo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -271,7 +271,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				93AE79882A7C2A58003B8800 /* BancoCuscatlanChallenge */,
+				93AE79882A7C2A58003B8800 /* iOSPokedexDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -314,7 +314,7 @@
 				93B5D6D02A7D888500D3EED9 /* PokedexView.swift in Sources */,
 				934EC5072A7E305100E00E1F /* PokemonRow.swift in Sources */,
 				93AE798F2A7C2A58003B8800 /* ContentView.swift in Sources */,
-				93AE798D2A7C2A58003B8800 /* BancoCuscatlanChallengeApp.swift in Sources */,
+				93AE798D2A7C2A58003B8800 /* IOSPokedexDemo.swift in Sources */,
 				939821CF2A7C611A001221E0 /* GenericError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,7 +501,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		93AE79842A7C2A58003B8800 /* Build configuration list for PBXProject "BancoCuscatlanChallenge" */ = {
+		93AE79842A7C2A58003B8800 /* Build configuration list for PBXProject "iOSPokedexDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93AE79952A7C2A5A003B8800 /* Debug */,
@@ -510,7 +510,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93AE79972A7C2A5A003B8800 /* Build configuration list for PBXNativeTarget "BancoCuscatlanChallenge" */ = {
+		93AE79972A7C2A5A003B8800 /* Build configuration list for PBXNativeTarget "iOSPokedexDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93AE79982A7C2A5A003B8800 /* Debug */,

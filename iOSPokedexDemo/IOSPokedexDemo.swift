@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct BancoCuscatlanChallengeApp: App {
+struct IOSPokedexDemo: App {
     @StateObject private var modelData = ModelData()
     
     var body: some Scene {
