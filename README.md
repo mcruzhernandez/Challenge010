@@ -1,4 +1,4 @@
-# BancoCuscatlanChallenge (2 revision)
+# iOS POKEDEX Demo
 
 Este proyecto fue realizado utilizando Xcode y SwiftUI
 
